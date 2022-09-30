@@ -20,13 +20,7 @@ class EmployeType extends AbstractType
             ->add('adresse')
             ->add('poste')
             ->add('salaire')
-            ->add('datedenaissance', DateType::class, [
-                'placeholder' => [
-                    'year' => 'Year', 'month' => 'Month', 'day' => 'Day',
-                    "years"=>range(1970, 2010)
-                ],
-            ]);
-
+            ->add('datedenaissance')
         ;
     }
 
