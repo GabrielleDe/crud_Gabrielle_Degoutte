@@ -14,7 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class EntrepriseController extends AbstractController
 {
-    #[Route('/entreprise', name: 'app_entreprise')]
+    #[Route('/', name: 'app_entreprise')]
 
     public function index(EmployesRepository $repo): Response
     {
