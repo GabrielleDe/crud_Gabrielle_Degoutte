@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EntrepriseController!{% endblock %}
+
+{% block body %}
+       
+        <table class="table table-striped" >
+         
+        <thead>
+            <tr>
+                <th>#</th>
+                <th scope="col">Prenom</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Téléphone</th>
+                <th scope="col">Email</th>
+                <th scope="col">Adresse</th>
+                <th scope="col">Poste</th>
+                <th scope="col">Salaire</th>
+                <th scope="col">DateDeNaissance</th>
+                <th scope="col">Option</th>
+            </tr>
+         
+        </thead>
+        
+  <tbody>
+        
+            {% for employe in employes %}
+                
+            <tr>
+
+                    <td>{{ employe.id }}</td>
+                    <td>{{ employe.prenom }}</td>
+                    <td>{{ employe.nom }}</td>
+                    <td>{{ employe.telephone }}</td>
+                    <td>{{ employe.email }}</td>
+                    <td>{{ employe.adresse }}</td>
+                    <td>{{ employe.poste }}</td>
+                    <td>{{ employe.salaire }}</td>
+                    <td>{{ employe.datedenaissance |date('d/m/Y') }}</td>
+                    <td><a  href="{{ path('entreprise_edit', {id:employe.id}) }}"><button class="btn btn-warning">Modifier</button></a>
+                    </td>
+                    <td>  <a  href="{{ path('entreprise_delete', {id:employe.id}) }}"><button class="btn btn-danger">Supprimer</button></a></td>
+                    
+            </tr>
+         
+       {% endfor %}
+      
+  </tbody>
+</table>
+ 
+
+<a class="btn btn-success" href="{{ path('entreprise_add') }}">Add</a>
+
+ 
+{% endblock %}

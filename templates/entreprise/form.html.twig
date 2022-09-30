@@ -1,0 +1,68 @@
+{% extends "base.html.twig" %}  
+
+{% block body %}
+
+{{form_start(form, {
+    attr: {
+        novalidate: 'novalidate'
+    }
+})}}
+<div>
+    {{ form_row(form.prenom, {
+        label: "Prénom",
+        attr: {
+            placeholder: "Entrez votre prénom",
+        }
+    })}}
+    {{ form_row(form.nom, {
+        label: "Nom",
+        attr: {
+            placeholder: "Entrez votre Nom",
+        }
+    })}}
+    {{ form_row(form.telephone
+    , {
+        label: "Téléphone",
+        attr: {
+            placeholder: "Entrez votre N° de téléphone",
+        }
+    })}}
+    {{ form_row(form.email, {
+        label: "Email",
+        attr: {
+            placeholder: "Entrez votre adresse Email",
+        }
+    })}}
+    {{ form_row(form.adresse, {
+        label: "Adresse",
+        attr: {
+            placeholder: "Entrez votre adresse",
+        }
+    })}}
+    {{ form_row(form.poste, {
+        label: "Poste",
+        attr: {
+            placeholder: "Entrez votre Poste",
+        }
+    })}}
+    {{ form_row(form.salaire, {
+        label: "Salaire",
+        attr: {
+            placeholder: "Entrez votre salaire",
+        }
+    })}}
+    {{ form_row(form.datedenaissance, {
+        label: "Date de naissance",
+        attr: {
+            placeholder: "Entrez votre date de naissance",
+        }
+    })}}
+</div>
+ <button type="submit" class="btn btn-info mt-4">
+     {% if edit %}
+        Enregistrer les modifications
+    {% else %}
+        Ajouter l'employé
+    {% endif %}
+    {{ form_end(form)}}
+{% endblock %}
